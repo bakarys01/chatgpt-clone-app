@@ -4,28 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useChat, Message } from 'ai/react';
 import VoiceRecorder from './VoiceRecorder';
 import TextToSpeech from './TextToSpeech';
+import MarkdownRenderer from './MarkdownRenderer';
 
-// Enhanced markdown rendering function
-const renderMarkdown = (content: string) => {
-  return content
-    // Headers
-    .replace(/^### (.*$)/gim, '<h3 class="text-lg font-semibold mt-4 mb-2">$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2 class="text-xl font-semibold mt-4 mb-2">$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1 class="text-2xl font-bold mt-4 mb-2">$1</h1>')
-    // Bold and italic
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-    // Code
-    .replace(/`(.*?)`/g, '<code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">$1</code>')
-    // Links
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">$1</a>')
-    // Lists
-    .replace(/^\* (.+$)/gim, '<li class="ml-4">• $1</li>')
-    .replace(/^- (.+$)/gim, '<li class="ml-4">• $1</li>')
-    // Line breaks
-    .replace(/\n\n/g, '</p><p class="mb-2">')
-    .replace(/\n/g, '<br>');
-};
 
 export interface ChatInterfaceProps {
   chatId: string;
@@ -251,10 +231,7 @@ export default function ChatInterface({
           <div className="flex-1">
             {images.length > 0 ? (
               <div className="space-y-2">
-                <div 
-                  className="prose prose-sm max-w-none leading-relaxed text-gray-800"
-                  dangerouslySetInnerHTML={{ __html: `<p class="mb-2">${renderMarkdown(message.content)}</p>` }}
-                />
+                <MarkdownRenderer content={message.content} />
                 {images.map((match, index) => {
                   const imageUrl = match[1] || match[0];
                   return (
@@ -269,10 +246,7 @@ export default function ChatInterface({
                 })}
               </div>
             ) : (
-              <div 
-                className="prose prose-sm max-w-none leading-relaxed text-gray-800"
-                dangerouslySetInnerHTML={{ __html: `<p class="mb-2">${renderMarkdown(message.content)}</p>` }}
-              />
+              <MarkdownRenderer content={message.content} />
             )}
           </div>
           
