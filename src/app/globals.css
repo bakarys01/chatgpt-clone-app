@@ -564,6 +564,138 @@ body {
 }
 
 /* ================================================
+   SYNTAX HIGHLIGHTING (Prism.js Theme)
+   ================================================ */
+
+/* Base styles for code blocks */
+.language-javascript .token.keyword,
+.language-typescript .token.keyword,
+.language-jsx .token.keyword,
+.language-tsx .token.keyword {
+  color: #569cd6 !important; /* Bleu pour les mots-clés */
+}
+
+.language-javascript .token.string,
+.language-typescript .token.string,
+.language-jsx .token.string,
+.language-tsx .token.string,
+.language-python .token.string {
+  color: #ce9178 !important; /* Orange pour les chaînes */
+}
+
+.language-javascript .token.comment,
+.language-typescript .token.comment,
+.language-jsx .token.comment,
+.language-tsx .token.comment,
+.language-python .token.comment {
+  color: #6a9955 !important; /* Vert pour les commentaires */
+}
+
+.language-javascript .token.number,
+.language-typescript .token.number,
+.language-jsx .token.number,
+.language-tsx .token.number,
+.language-python .token.number {
+  color: #b5cea8 !important; /* Vert clair pour les nombres */
+}
+
+.language-javascript .token.function,
+.language-typescript .token.function,
+.language-jsx .token.function,
+.language-tsx .token.function,
+.language-python .token.function {
+  color: #dcdcaa !important; /* Jaune pour les fonctions */
+}
+
+.language-javascript .token.operator,
+.language-typescript .token.operator,
+.language-jsx .token.operator,
+.language-tsx .token.operator,
+.language-python .token.operator {
+  color: #d4d4d4 !important; /* Blanc pour les opérateurs */
+}
+
+.language-javascript .token.punctuation,
+.language-typescript .token.punctuation,
+.language-jsx .token.punctuation,
+.language-tsx .token.punctuation {
+  color: #d4d4d4 !important; /* Blanc pour la ponctuation */
+}
+
+.language-javascript .token.class-name,
+.language-typescript .token.class-name,
+.language-jsx .token.class-name,
+.language-tsx .token.class-name,
+.language-python .token.class-name {
+  color: #4ec9b0 !important; /* Cyan pour les classes */
+}
+
+.language-javascript .token.variable,
+.language-typescript .token.variable,
+.language-jsx .token.variable,
+.language-tsx .token.variable {
+  color: #9cdcfe !important; /* Bleu clair pour les variables */
+}
+
+/* Python specific */
+.language-python .token.keyword {
+  color: #ff7b72 !important; /* Rouge pour les mots-clés Python */
+}
+
+.language-python .token.builtin {
+  color: #79c0ff !important; /* Bleu pour les built-ins Python */
+}
+
+/* CSS specific */
+.language-css .token.property {
+  color: #92c5f7 !important; /* Bleu pour les propriétés CSS */
+}
+
+.language-css .token.selector {
+  color: #ffa657 !important; /* Orange pour les sélecteurs CSS */
+}
+
+/* HTML specific */
+.language-html .token.tag {
+  color: #569cd6 !important; /* Bleu pour les tags HTML */
+}
+
+.language-html .token.attr-name {
+  color: #92c5f7 !important; /* Bleu clair pour les attributs */
+}
+
+.language-html .token.attr-value {
+  color: #ce9178 !important; /* Orange pour les valeurs d'attributs */
+}
+
+/* JSON specific */
+.language-json .token.property {
+  color: #79c0ff !important; /* Bleu pour les propriétés JSON */
+}
+
+.language-json .token.string {
+  color: #a5d6ff !important; /* Bleu clair pour les chaînes JSON */
+}
+
+/* Bash/Shell specific */
+.language-bash .token.function {
+  color: #d2a8ff !important; /* Violet pour les commandes bash */
+}
+
+.language-bash .token.string {
+  color: #a5d6ff !important; /* Bleu clair pour les chaînes bash */
+}
+
+/* SQL specific */
+.language-sql .token.keyword {
+  color: #ff7b72 !important; /* Rouge pour les mots-clés SQL */
+}
+
+.language-sql .token.string {
+  color: #a5d6ff !important; /* Bleu clair pour les chaînes SQL */
+}
+
+/* ================================================
    ANIMATIONS
    ================================================ */
 

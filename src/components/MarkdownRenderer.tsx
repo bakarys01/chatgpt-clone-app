@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import SyntaxHighlighter from './SyntaxHighlighter';
 
 interface CodeBlockProps {
   children: string;
@@ -48,10 +49,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ children, language }) => {
         </button>
       </div>
       
-      {/* Code */}
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded-b-lg overflow-x-auto">
-        <code className={`language-${language}`}>{children}</code>
-      </pre>
+      {/* Code avec coloration syntaxique */}
+      <SyntaxHighlighter
+        code={children}
+        language={language}
+        className="rounded-b-lg"
+      />
     </div>
   );
 };

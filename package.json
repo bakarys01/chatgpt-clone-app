@@ -10,11 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/prismjs": "^1.26.5",
     "ai": "^2.2.10",
     "file-saver": "^2.0.5",
     "next": "14.0.3",
     "openai": "^4.25.0",
     "pdf-parse": "^1.1.1",
+    "prismjs": "^1.30.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
